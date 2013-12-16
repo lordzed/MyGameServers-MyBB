@@ -1,11 +1,11 @@
-<?php
+﻿<?php
 /**
  * MyGameservers Plugin for MyBB
  * Copyright � 2010 MyBB Mods
  *
  * By: Lordzed
- * Website: http://mods.mybb.com/
- * Version: 1.0.0
+ * Website: http://320it.tk/
+ * Version: 1.5
  */
 
 // Disallow direct access to this file for security reasons

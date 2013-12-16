@@ -77,7 +77,7 @@ else
 		{
 			$mod = $Info['ModDir'];
 				
-                        if ($Info['ModDir'] == 'tf') 
+            if ($Info['ModDir'] == 'tf') 
 			{
 				echo "<td class='trow2' align='center'><img src='./images/mygameservers/tf2.png' title='TeamFortress 2'></td>";
 			}
@@ -165,6 +165,7 @@ else
 		{
 			echo "<td class='trow2'><strong>" . $lang->error_connecting . "</strong> (" . $servidor['ipadress'] . ":" . $servidor['port'] . ")</td>";
 		} 
+
 		echo "</tr>";
 	}
 }
@@ -179,11 +180,10 @@ function global_header()
 
 	echo '<html>
 		<head>
-		<title>320iT Servers</title>
 		' . $headerinclude . '
 		</head>
-		<body>
-	' . $header;
+		<body>'
+	;
 }
 
 function global_footer()
