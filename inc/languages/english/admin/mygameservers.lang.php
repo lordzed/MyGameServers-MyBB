@@ -1,13 +1,13 @@
 <?php
 /**
  * MyGameservers Plugin for MyBB
- * Copyright © 2010 MyBB Mods
+ * Copyright ï¿½ 2010 MyBB Mods
  *
  * By: Lordzed
  * Website: http://mods.mybb.com/
  * Version: 0.9.0
  */
-$l['mygameservers'] = 'MyGameservers';
+$l['mygameservers'] = 'Server List';
 $l['mygameservers_desc'] = 'Create a Source Engine gameservers list';
 
 $l['add_server'] = 'Add Server';
@@ -16,6 +16,8 @@ $l['edit_server'] = 'Edit Server';
 $l['edit_server_desc'] = 'Here you can edit an existing server.';
 $l['manage_servers_desc'] = 'Here you can add one or more servers to the list.';
 
+$l['game'] = 'Game';
+$l['hostname'] = 'Hostname';
 $l['ip'] = 'IP';
 $l['ip_desc'] = 'Server IP adress';
 $l['port'] = 'Port';

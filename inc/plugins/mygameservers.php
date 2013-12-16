@@ -1,14 +1,15 @@
-﻿<?php
+<?php
 /**
  * MyGameservers Plugin for MyBB
  * Copyright � 2010 MyBB Mods
  *
  * By: Lordzed
  * Website: http://320it.tk/
- * Version: 1.5
+ * Version: 1.6
  */
 
 // Disallow direct access to this file for security reasons
+include ("mygameservers.lib.php");
 if(!defined("IN_MYBB"))
 {
 	die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.");
@@ -300,15 +301,41 @@ function mygameservers_admin()
 			$page->output_nav_tabs($sub_tabs, 'manage_gameservers');
 
 			$table = new Table;
+            $table->construct_header($lang->game);
+            $table->construct_header($lang->hostname);
 			$table->construct_header($lang->ip);
 			$table->construct_header($lang->port);
 			$table->construct_header($lang->actions, array('class' => "align_center", 'colspan' => 2));
 
-			$query = $db->simple_select('mygameservers', '*');
-			while($servidor = $db->fetch_array($query))
-			{
+		
+           $query = $db->simple_select('mygameservers', '*');
+	       while($servidor = $db->fetch_array($query))
+	   {
+		$Query = new SourceQuery( );
+		
+		$Info    = Array( );
+		$Rules   = Array( );
+		$Players = Array( );
+		
+		try
+		{
+			$Query->Connect( $servidor["ipadress"], $servidor["port"], 1, SourceQuery :: SOURCE );
+			
+			$Info    = $Query->GetInfo( );
+			$Players = $Query->GetPlayers( );
+			$Rules   = $Query->GetRules( );
+		}
+		catch( Exception $e )
+		{
+			$Exception = $e;
+		}
+		
+               $Query->Disconnect( );
+                
+               $table->construct_cell($Info['ModDir'], array('width' => '5%'));
+                $table->construct_cell($Info['HostName'], array('width' => '25%'));
 				$table->construct_cell($servidor['ipadress'], array('width' => '25%'));
-				$table->construct_cell($servidor['port'], array('width' => '25%'));
+				$table->construct_cell($servidor['port'], array('width' => '5%'));
 				$table->construct_cell("<a href=\"index.php?module=config/mygameservers&amp;action=edit&amp;sid={$servidor['sid']}\">{$lang->actions_edit}</a>", array("class" => "align_center"));
 				$table->construct_cell("<a href=\"index.php?module=config/mygameservers&amp;action=delete&amp;sid={$servidor['sid']}&amp;my_post_key={$mybb->post_code}\" onclick=\"return AdminCP.deleteConfirmation(this, '{$lang->confirm_server_deletion}')\">{$lang->actions_delete}</a>", array("class" => "align_center"));
 				$table->construct_row();
