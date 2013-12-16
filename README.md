@@ -4,11 +4,14 @@ Mygameservers-Mybb
 
 *AlienSwarm
 *Counter-Strike:Global Offensive
+*Day of Defeat Source
+*Dota 2
+*Garry`s Mod
+*Half-Life 2 Deathmatch
 *Left 4 Dead
 *Left 4 Dead 2
-*Day of Defeat Source
 *Team Fortress 2
-*Half-Life 2 Deathmatch
-*Garry`s Mod
+
+
 
 2. To install this plugin simply upload it to the root of the mybb forum
