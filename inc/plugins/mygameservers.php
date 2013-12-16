@@ -9,7 +9,7 @@
  */
 
 // Disallow direct access to this file for security reasons
-include ("mygameservers.lib.php");
+require_once ("mygameservers.lib.php");
 if(!defined("IN_MYBB"))
 {
 	die("Direct initialization of this file is not allowed.<br /><br />Please make sure IN_MYBB is defined.");
@@ -334,10 +334,10 @@ function mygameservers_admin()
                 
                $table->construct_cell($Info['ModDir'], array('width' => '5%'));
                 $table->construct_cell($Info['HostName'], array('width' => '25%'));
-				$table->construct_cell($servidor['ipadress'], array('width' => '25%'));
+				$table->construct_cell($servidor['ipadress'], array('width' => '5%'));
 				$table->construct_cell($servidor['port'], array('width' => '5%'));
-				$table->construct_cell("<a href=\"index.php?module=config/mygameservers&amp;action=edit&amp;sid={$servidor['sid']}\">{$lang->actions_edit}</a>", array("class" => "align_center"));
-				$table->construct_cell("<a href=\"index.php?module=config/mygameservers&amp;action=delete&amp;sid={$servidor['sid']}&amp;my_post_key={$mybb->post_code}\" onclick=\"return AdminCP.deleteConfirmation(this, '{$lang->confirm_server_deletion}')\">{$lang->actions_delete}</a>", array("class" => "align_center"));
+				$table->construct_cell("<a href=\"index.php?module=config/mygameservers&amp;action=edit&amp;sid={$servidor['sid']}\">{$lang->actions_edit}</a>", array('width' => '5%',"class" => "align_center"));
+				$table->construct_cell("<a href=\"index.php?module=config/mygameservers&amp;action=delete&amp;sid={$servidor['sid']}&amp;my_post_key={$mybb->post_code}\" onclick=\"return AdminCP.deleteConfirmation(this, '{$lang->confirm_server_deletion}')\">{$lang->actions_delete}</a>", array('width' => '5%',"class" => "align_center"));
 				$table->construct_row();
 			}
 

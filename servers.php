@@ -11,7 +11,7 @@
 define('IN_MYBB', 1); 
 define('THIS_SCRIPT', 'mygameservers.php');
 require_once "./global.php";
-include ("./inc/plugins/mygameservers.lib.php");
+require_once ("./inc/plugins/mygameservers.lib.php");
 
 $lang->load('mygameservers');
 $context['page_title'] = $lang->mygameservers;
@@ -112,7 +112,11 @@ else
             elseif ($Info['ModDir'] == 'hl2mp') 
 			{
 				echo "<td class='trow2' align='center'><img src='./images/mygameservers/hl2dm.png' title='Half-Life 2 Deathmatch'></td>";   
-			}        
+			}
+            elseif ($Info['ModDir'] == 'cstrike') 
+			{
+				echo "<td class='trow2' align='center'><img src='./images/mygameservers/css.png' title='Counter-Strike Source'></td>";   
+			}     
 		}
 		else
 		{
