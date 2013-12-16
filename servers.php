@@ -177,12 +177,6 @@ global_footer();
 function global_header()
 {
 	global $headerinclude, $context, $header;
-
-	echo '<html>
-		<head>
-		' . $headerinclude . '
-		</head>
-		<body>'
 	;
 }
 
