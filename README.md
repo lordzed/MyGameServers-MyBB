@@ -12,6 +12,4 @@ Mygameservers-Mybb
 *Left 4 Dead 2
 *Team Fortress 2
 
-
-
 2. To install this plugin simply upload it to the root of the mybb forum
