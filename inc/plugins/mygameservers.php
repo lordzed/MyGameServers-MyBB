@@ -32,7 +32,7 @@ function mygameservers_info()
 		'website'       => 'http://mods.mybb.com/',
 		'author'        => 'Lordzed',
 		'authorsite'    => 'http://320it.tk',
-		'version'       => '1.0.0',
+		'version'       => '1.6',
 		'guid'          => '1abd2b44188b679d300422e828eff0b1',
 		'compatibility' => '16*'
 	);
