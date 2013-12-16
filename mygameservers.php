@@ -76,7 +76,7 @@ else
 		{
 			$mod = $Info['ModDir'];
 				
-            if ($Info['ModDir'] == 'tf') 
+                        if ($Info['ModDir'] == 'tf') 
 			{
 				echo "<td class='trow2' align='center'><img src='./images/mygameservers/tf2.png' title='TeamFortress 2'></td>";
 			}
