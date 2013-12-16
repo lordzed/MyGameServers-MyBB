@@ -177,7 +177,6 @@ global_footer();
 function global_header()
 {
 	global $headerinclude, $context, $header;
-	;
 }
 
 function global_footer()
