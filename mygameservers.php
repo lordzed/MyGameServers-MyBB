@@ -77,7 +77,7 @@ else
 		{
 			$mod = $Info['ModDir'];
 				
-                        if ($Info['ModDir'] == 'tf') 
+            if ($Info['ModDir'] == 'tf') 
 			{
 				echo "<td class='trow2' align='center'><img src='./images/mygameservers/tf2.png' title='TeamFortress 2'></td>";
 			}
@@ -85,6 +85,34 @@ else
 			{
 				echo "<td class='trow2' align='center'><img src='./images/mygameservers/csgo.png' title='Counter-Strike : Global Offensive'></td>";
 			}
+            elseif ($Info['ModDir'] == 'dota') 
+			{
+				echo "<td class='trow2' align='center'><img src='./images/mygameservers/dota.png' title='Dota 2'></td>";   
+			}
+            elseif ($Info['ModDir'] == 'left4dead') 
+			{
+				echo "<td class='trow2' align='center'><img src='./images/mygameservers/l4d.png' title='Left 4 Dead '></td>";   
+			}
+              elseif ($Info['ModDir'] == 'left4dead2') 
+			{
+				echo "<td class='trow2' align='center'><img src='./images/mygameservers/l4d2.png' title='Left 4 Dead 2'></td>";   
+			}
+            elseif ($Info['ModDir'] == 'garrysmod') 
+			{
+				echo "<td class='trow2' align='center'><img src='./images/mygameservers/gmod.png' title='Garry`s Mod'></td>";   
+			}
+            elseif ($Info['ModDir'] == 'alienswarm') 
+			{
+				echo "<td class='trow2' align='center'><img src='./images/mygameservers/alienswarm.png' title='Alienswarm'></td>";   
+			}
+             elseif ($Info['ModDir'] == 'dod') 
+			{
+				echo "<td class='trow2' align='center'><img src='./images/mygameservers/dods.png' title='Day of Defeat : Source'></td>";   
+			}
+            elseif ($Info['ModDir'] == 'hl2mp') 
+			{
+				echo "<td class='trow2' align='center'><img src='./images/mygameservers/hl2dm.png' title='Half-Life 2 Deathmatch'></td>";   
+			}   
 		}
 		else
 		{
