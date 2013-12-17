@@ -17,6 +17,7 @@ $l['index_map'] = 'Map';
 $l['index_status'] = 'Status';
 $l['index_connect'] = 'Join';
 $l['index_thead'] = 'Servers List';
+$l['index_gametracker'] = 'GT';
 
 $l['error_connecting'] = 'Error connecting';
 ?>
