@@ -19,7 +19,7 @@ $l['manage_servers_desc'] = 'Here you can add one or more servers to the list.';
 $l['game'] = 'Game';
 $l['hostname'] = 'Hostname';
 $l['ip'] = 'IP';
-$l['ip_desc'] = 'Server IP adress';
+$l['ip_desc'] = 'Server IP or DNS adress';
 $l['port'] = 'Port';
 $l['port_desc'] = 'Server Port';
 

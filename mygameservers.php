@@ -206,7 +206,7 @@ else
         // connect to the servers
         if (Is_Array($Info)) 
 		{
-			echo "<td class='trow2' align='center'><a href=steam://connect/" . $servidor['ipadress'] . ":" . $servidor['port'] . ">Connect</a></td>";
+			echo "<td class='trow2' align='center'><a href=steam://connect/" . $servidor['ipadress'] . ":" . $servidor['port'] . "><img src='./images/mygameservers/join.png'></a></td>";
 		} 
 		else 
 		{
