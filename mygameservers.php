@@ -5,7 +5,7 @@
  *
  * By: Lordzed
  * Website: http://320it.tk/
- * Version: 1.7
+ * Version: 1.9
  */
 
 define('IN_MYBB', 1); 
@@ -16,6 +16,41 @@ require_once ("./inc/plugins/mygameservers.lib.php");
 $lang->load('mygameservers');
 $context['page_title'] = $lang->mygameservers;
 global_header();
+
+// css style
+
+echo "
+<script type='text/javascript' src='jscripts/jquery-1.7.2.min.js'></script>
+<script type='text/javascript'>
+	jQuery.noConflict();
+	jQuery(document).ready(function($){
+		$('.mygameservers_opener').click(function(){
+			$(this).next().fadeToggle();
+		});
+	});
+</script>
+<style type='text/css'>
+	.mygameservers_hidden {
+		display: none;
+	}
+	.mygameservers_opener:hover {
+		background: #F7F7F7;
+		cursor: pointer;
+	}
+	.mygameservers_opener {
+		-webkit-transition: all 250ms ease-in-out;
+		-moz-transition: all 250ms ease-in-out;
+		-o-transition: all 250ms ease-in-out;
+		transition: all 250ms ease-in-out;
+	}
+	.mygameservers_td {
+		font-size: 10px;
+		padding: 5px;
+	}
+</style>
+";
+
+
 
 echo "<table border='0' cellspacing='0' cellpadding='4' class='tborder'>
 			<thead>
@@ -72,8 +107,8 @@ else
 		}
 		
 		$Query->Disconnect( );
-		
-		echo "<tr>";
+        
+		echo "<tr class='mygameservers_opener'>";
 		if (Is_Array($Info))
 		{
 			$mod = $Info['ModDir'];
@@ -213,11 +248,76 @@ else
 			echo "<td class='trow2'><strong>" . $lang->error_connecting . "</strong> (" . $servidor['ipadress'] . ":" . $servidor['port'] . ")</td>";
 		} 
 
-		echo "</tr>";
+        
+        // Show Players
+echo "<tr class='mygameservers_hidden'><td colspan='7'>";
+echo "<table border='0' cellspacing='0' cellpadding='4' class='tborder' style='width: 48%; float: left;'>
+				<thead>
+					<td class='thead' colspan='3'>
+						<strong>" . $lang->mygameservers_players . "</strong>
+					</td>
+				</thead>
+				<tbody>
+					<tr>
+						<td class='tcat'>" . $lang->mygameservers_players_name . "</td>
+						<td class='tcat'>" . $lang->mygameservers_players_score . "</td>
+						<td class='tcat'>" . $lang->mygameservers_players_time . "</td>
+					</tr>";
+		if (Is_Array($Players))
+		{
+			foreach ($Players as $Player)
+			{		
+				echo "<tr>";
+				echo "<td class='trow2 mygameservers_td'>" . htmlspecialchars($Player["Name"]) . "</td>";
+				echo "<td class='trow2 mygameservers_td'>" . htmlspecialchars($Player["Frags"]) . "</td>";
+				echo "<td class='trow2 mygameservers_td'>" . htmlspecialchars($Player["TimeF"]) . "</td>";
+				echo "</tr>";
+			}
+		}
+		else
+		{
+			echo "<tr>";
+			echo "<td class='trow2 mygameservers_td'>" . $lang->mygameservers_players_not_found . "</td>";
+			echo "</tr>";
+		}
+		echo "</tbody></table>";
+		if ($mybb->settings['mygs_show_rules'])
+		{
+			echo "<table border='0' cellspacing='0' cellpadding='4' class='tborder' style='width: 48%;'>
+					<thead>
+						<td class='thead' colspan='2'>
+							<strong>" . $lang->mygameservers_rules . "</strong>
+						</td>
+					</thead>
+					<tbody>
+						<tr>
+							<td class='tcat'>" . $lang->mygameservers_rules_name . "</td>
+							<td class='tcat'>" . $lang->mygameservers_rules_value . "</td>
+						</tr>";
+			if (Is_Array($Rules))
+			{
+				foreach ($Rules as $Rule => $Value)
+				{		
+					echo "<tr>";
+					echo "<td class='trow2 mygameservers_td'>" . htmlspecialchars($Rule) . "</td>";
+					echo "<td class='trow2 mygameservers_td'>" . htmlspecialchars($Value) . "</td>";
+					echo "</tr>";
+				}
+			}
+			else
+			{
+				echo "<tr>";
+				echo "<td class='trow2 mygameservers_td'>" . $lang->mygameservers_rules_not_found . "</td>";
+				echo "</tr>";
+			}
+			echo "</tbody></table>";
+		}
+		echo "</td></tr>";
 	}
 }
 	echo "<tbody>";
 	echo "</table>";
+
 
 global_footer();
 

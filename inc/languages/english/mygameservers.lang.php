@@ -19,5 +19,15 @@ $l['index_connect'] = 'Join';
 $l['index_thead'] = 'Servers List';
 $l['index_gametracker'] = 'GT';
 
+$l['mygameservers_players'] = 'Players';
+$l['mygameservers_players_name'] = 'Name';
+$l['mygameservers_players_score'] = 'Score';
+$l['mygameservers_players_time'] = 'Time';
+$l['mygameservers_players_not_found'] = 'Players not found';
+$l['mygameservers_rules'] = 'Rules';
+$l['mygameservers_rules_name'] = 'Rule';
+$l['mygameservers_rules_value'] = 'Value';
+$l['mygameservers_rules_not_found'] = 'Rules not found';
+
 $l['error_connecting'] = 'Error connecting';
 ?>
