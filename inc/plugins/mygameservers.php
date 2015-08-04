@@ -34,7 +34,7 @@ function mygameservers_info()
 		'authorsite'    => 'http://320it.tk',
 		'version'       => '1.6',
 		'guid'          => '1abd2b44188b679d300422e828eff0b1',
-		'compatibility' => '16*'
+		'compatibility' => '16*,18*'
 	);
 }
 
